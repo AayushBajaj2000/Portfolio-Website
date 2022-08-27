@@ -16,7 +16,7 @@ const draw = {
   },
 };
 
-const RobotTest = () => {
+const RobotLogo = () => {
   return (
     <motion.div
       whileHover={{
@@ -127,4 +127,4 @@ const RobotTest = () => {
   );
 };
 
-export default RobotTest;
+export default RobotLogo;
