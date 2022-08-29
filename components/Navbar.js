@@ -1,7 +1,27 @@
-import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import RobotLogo from "@components/RobotLogo";
+import { motion } from "framer-motion";
+import useBackdrop from "@hooks/useBackdrop";
+
+const container = {
+  hidden: { opacity: 1 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 1.5,
+      duration: 1.5,
+      staggerChildren: 0.2,
+      delay: 3,
+      type: "spring",
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: -50 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, type: "spring" } },
+};
 
 const GithubSVG = () => {
   return (
@@ -21,8 +41,17 @@ const GithubSVG = () => {
 };
 
 const Navbar = () => {
+  const backdrop = useBackdrop();
+
   return (
-    <div className="h-[90px] w-full justify-around flex fixed p-3 items-center z-10">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className={`h-[90px] w-full justify-around flex fixed p-3 items-center z-10 transition-all  ${
+        backdrop ? "bg-[#20202380] backdrop-blur-md" : "bg-transparent"
+      }`}
+    >
       <div className="flex items-center h-full">
         <RobotLogo />
         <p className="ml-10 text-3xl font-semibold font-heading hover:cursor-pointer">
@@ -30,16 +59,23 @@ const Navbar = () => {
         </p>
       </div>
       <div className="flex justify-around w-[350px] items-center">
-        <p className="text-xl hover:underline hover:cursor-pointer">Projects</p>
-        <div className="flex items-center">
+        <motion.p
+          variants={item}
+          className="text-xl hover:underline hover:cursor-pointer"
+        >
+          Projects
+        </motion.p>
+        <motion.div variants={item} className="flex items-center">
           <GithubSVG />
           <p className="text-xl hover:underline hover:cursor-pointer">Source</p>
-        </div>
-        <Button className="h-full p-2 text-xl rounded-md outline-2 hover:bg-slate-300 hover:bg-opacity-30 outline-white outline">
-          Resume
-        </Button>
+        </motion.div>
+        <motion.div variants={item}>
+          <Button className="h-full p-2 text-xl rounded-md outline-2 hover:bg-slate-300 hover:bg-opacity-30 outline-white outline">
+            Resume
+          </Button>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

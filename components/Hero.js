@@ -1,11 +1,24 @@
 import React from "react";
 import * as ReactRotatingText from "react-rotating-text";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Hero = () => {
   return (
     <section className="relative flex items-center justify-center min-h-screen p-5 text-white">
-      <div className="flex flex-col flex-1 items-start justify-center max-w-[1000px]">
+      <motion.div
+        initial={{ x: 300, opacity: 0 }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          transition: {
+            duration: 2,
+            delay: 0.5,
+            type: "spring",
+          },
+        }}
+        className="flex flex-col flex-1 items-start justify-center max-w-[1000px]"
+      >
         <div className="backdrop-blur-md bg-[rgba(255,255,255,0.08)] p-2 rounded-md">
           <h1 className="text-xl">Hi, my name is</h1>
         </div>
@@ -19,6 +32,7 @@ const Hero = () => {
                 "I am a Full Stack Developer.",
                 "I am a Mechatronics Engineer.",
               ]}
+              deletingInterval={20}
             />
           </h3>
         </div>
@@ -35,7 +49,7 @@ const Hero = () => {
             </a>
           </p>
         </div>
-      </div>
+      </motion.div>
       <motion.div
         className="absolute bottom-0"
         initial={{

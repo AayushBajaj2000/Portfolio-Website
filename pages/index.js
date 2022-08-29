@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
 import Hero from "@components/Hero";
-import LoadingAnimation from "@components/LoadingAnimation";
-import Robot from "@components/Robot.js";
-import { motion, AnimatePresence } from "framer-motion";
+import About from "@components/About";
+import Projects from "@components/Projects";
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Robot />
+      <About />
+      <Projects />
     </>
   );
 };

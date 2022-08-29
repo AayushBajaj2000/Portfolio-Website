@@ -45,7 +45,7 @@ a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #202023;
 }
 
 /* Handle */
