@@ -48,6 +48,7 @@ const Projects = () => {
         >
           {projectData.map((project, index) => (
             <motion.div
+              key={index}
               variants={item}
               whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
               viewport={{ once: true }}
