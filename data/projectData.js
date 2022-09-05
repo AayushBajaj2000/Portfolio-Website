@@ -2,7 +2,7 @@ const projectData = [
   {
     heading: "Efundrs",
     description:
-      "A platform where anyone can fundraiser money by selling products.",
+      "A platform where sports teams can fundraise money by selling products.",
     link: "",
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-website-b7095.appspot.com/o/Efundrs.JPG?alt=media&token=86fc729a-d769-4218-8a7e-fff307440552",
@@ -41,7 +41,7 @@ const projectData = [
   {
     heading: "Contactless Transactions App",
     description:
-      "A contactless transactions app build for our university's bookstore.",
+      "A contactless transactions app built for our university's bookstore.",
     link: "",
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-website-b7095.appspot.com/o/Contactless.JPG?alt=media&token=f9f735db-c2e0-43a6-96ff-fcd5a87f25bd",

@@ -3,6 +3,7 @@ import Navbar from "@components/Navbar";
 import Loader from "@components/Loader";
 import useLoader from "@hooks/useLoader";
 import { motion, AnimatePresence } from "framer-motion";
+import Footer from "./Footer";
 
 const ANIMATION_DELAY = 3;
 
@@ -39,7 +40,7 @@ const Layout = ({ children }) => {
         >
           <Navbar />
           <main>{children}</main>
-          <footer></footer>
+          <Footer />
         </motion.div>
       )}
     </>

@@ -20,13 +20,15 @@ const Hero = () => {
         className="flex flex-col flex-1 items-start justify-center max-w-[1000px]"
       >
         <div className="backdrop-blur-md bg-[rgba(255,255,255,0.08)] p-2 rounded-md">
-          <h1 className="text-xl">Hi, my name is</h1>
+          <h1 className="text-lg md:text-xl">Hi, my name is</h1>
         </div>
         <div className="my-3">
-          <h2 className="text-6xl font-semibold font-heading">Aayush Bajaj.</h2>
+          <h2 className="text-2xl font-semibold md:text-5xl font-heading">
+            Aayush Bajaj.
+          </h2>
         </div>
         <div className="my-3">
-          <h3 className="text-6xl font-bold opacity-70">
+          <h3 className="text-3xl font-bold md:text-6xl opacity-70">
             <ReactRotatingText
               items={[
                 "I am a Full Stack Developer.",
@@ -37,7 +39,7 @@ const Hero = () => {
           </h3>
         </div>
         <div className="max-w-xl my-3 text-justify">
-          <p>
+          <p className="text-[14px] md:text-[16px]">
             I’m a mechatronics engineer specializing in building full stack
             applications. Currently, I’m focused on building a fundraising
             platform for

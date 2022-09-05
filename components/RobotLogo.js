@@ -31,7 +31,7 @@ const RobotLogo = () => {
           stiffness: 100,
         },
       }}
-      className="flex items-center w-12 h-full mb-2 cursor-pointer"
+      className="flex items-center w-8 h-full mb-2 cursor-pointer md:w-12"
     >
       <motion.svg
         width="70"
