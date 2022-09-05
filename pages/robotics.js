@@ -2,6 +2,7 @@ import React from "react";
 import Project from "@components/Project";
 import projectData from "@data/roboticsProjectData";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const container = {
   hidden: { opacity: 1 },
@@ -56,9 +57,11 @@ const Projects = () => {
           ))}
           <p className="text-xl mt-[80px] text-center ">
             Interested in my Coding Projects?{" "}
-            <motion.a className="hover:underline hover:cursor-pointer">
-              Click Here
-            </motion.a>
+            <Link href="/">
+              <motion.a className="hover:underline hover:cursor-pointer">
+                Click Here
+              </motion.a>
+            </Link>
           </p>
         </motion.div>
       </div>
