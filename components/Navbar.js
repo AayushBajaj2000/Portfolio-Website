@@ -86,7 +86,13 @@ const Navbar = () => {
             Projects
           </motion.p>
           */}
-          <motion.div variants={item} className="flex items-center">
+          <motion.div
+            variants={item}
+            className="flex items-center"
+            onClick={() => {
+              window.open("https://github.com/AayushBajaj2000", "_blank");
+            }}
+          >
             <GithubSVG />
             <p className="text-xl hover:underline hover:cursor-pointer">
               Source
