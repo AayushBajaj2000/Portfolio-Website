@@ -13,10 +13,11 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </Layout>
       <Script
+        id="gat"
         strategy="lazyOnload"
         src={"https://www.googletagmanager.com/gtag/js?id=G-0SMVZR7HZT"}
       ></Script>
-      <Script strategy="lazyOnload">
+      <Script id="ga" strategy="lazyOnload">
         {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
