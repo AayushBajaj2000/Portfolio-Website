@@ -177,7 +177,7 @@ const Navbar = () => {
                         <div
                           onClick={() => {
                             window.open(
-                              "https://firebasestorage.googleapis.com/v0/b/portfolio-website-b7095.appspot.com/o/Resume%20-%20Aayush%20Bajaj.pdf?alt=media&token=32980bf4-a7ff-4618-8756-057d65a5484c",
+                              "https://firebasestorage.googleapis.com/v0/b/portfolio-website-b7095.appspot.com/o/Resume%20-%20Aayush%20Bajaj.pdf?alt=media&token=cc8cd9e0-685c-4a52-81e0-944afd30971d",
                               "_blank"
                             );
                             close();
