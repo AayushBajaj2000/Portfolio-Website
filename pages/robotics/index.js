@@ -1,8 +1,8 @@
 import React from "react";
 import Project from "@components/Project";
-import projectData from "@data/roboticsProjectData";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const container = {
   hidden: { opacity: 1 },
@@ -26,7 +26,10 @@ const item = {
   },
 };
 
-const Projects = () => {
+const Projects = ({ projects }) => {
+  const router = useRouter();
+  const projectData = projects;
+
   return (
     <div className="flex items-center justify-center w-full min-h-screen">
       <div className="flex flex-col items-center flex-1 max-w-6xl mt-[150px]">
@@ -51,6 +54,9 @@ const Projects = () => {
               key={index}
               whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
               className="w-full md:w-1/2 max-w-[330px] p-3 hover:cursor-pointer"
+              onClick={() => {
+                router.push(`/robotics/${project.id}`);
+              }}
             >
               <Project data={project} key={index} />
             </motion.div>
@@ -70,3 +76,29 @@ const Projects = () => {
 };
 
 export default Projects;
+
+export async function getServerSideProps(context) {
+  // get slug from context
+  const query = `*[_type == "roboticprojects"] | order(_createdAt asc) {
+    link, heading, description, "id": slug.current, "image": image.asset->url
+  } `;
+  const url = `https://myde3fi0.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
+    query
+  )}`;
+  const result = await fetch(url)
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+  const projects = result.result;
+
+  if (!projects) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      projects,
+    },
+  };
+}

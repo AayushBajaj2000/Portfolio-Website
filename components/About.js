@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import useLinks from "@hooks/useLinks";
 
 const technologies = [
   "ReactJs",
@@ -15,6 +16,8 @@ const technologies = [
 ];
 
 const About = () => {
+  const { state } = useLinks();
+
   return (
     <div className="flex items-center justify-center w-full min-h-screen p-10 md:p-2">
       <motion.div
@@ -81,10 +84,7 @@ const About = () => {
                 className="w-6 h-6 mr-5 hover:cursor-pointer"
                 fill="white"
                 onClick={() => {
-                  window.open(
-                    "https://www.linkedin.com/in/aayush-bajaj-b80a8919a/",
-                    "_blank"
-                  );
+                  window.open(state.linkedin, "_blank");
                 }}
               >
                 <path d="M20.47,2H3.53A1.45,1.45,0,0,0,2.06,3.43V20.57A1.45,1.45,0,0,0,3.53,22H20.47a1.45,1.45,0,0,0,1.47-1.43V3.43A1.45,1.45,0,0,0,20.47,2ZM8.09,18.74h-3v-9h3ZM6.59,8.48h0a1.56,1.56,0,1,1,0-3.12,1.57,1.57,0,1,1,0,3.12ZM18.91,18.74h-3V13.91c0-1.21-.43-2-1.52-2A1.65,1.65,0,0,0,12.85,13a2,2,0,0,0-.1.73v5h-3s0-8.18,0-9h3V11A3,3,0,0,1,15.46,9.5c2,0,3.45,1.29,3.45,4.06Z" />
@@ -95,7 +95,7 @@ const About = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 onClick={() => {
-                  window.open("https://github.com/AayushBajaj2000", "_blank");
+                  window.open(state.github, "_blank");
                 }}
               >
                 <path
@@ -109,7 +109,7 @@ const About = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 onClick={() => {
-                  window.open("mailto:byaayushb@gmail.com", "_blank");
+                  window.open(`mailto:${state.email}`, "_blank");
                 }}
               >
                 <path
