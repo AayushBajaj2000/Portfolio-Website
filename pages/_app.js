@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import Layout from "@components/Layout";
 import Head from "next/head";
 import Script from "next/script";
+import { LinkProvider } from "@data/LinkProvider";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,9 +10,11 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Aayush Bajaj</title>
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <LinkProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </LinkProvider>
       <Script
         id="gat"
         strategy="lazyOnload"

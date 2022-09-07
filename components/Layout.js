@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import Navbar from "@components/Navbar";
 import Loader from "@components/Loader";
 import useLoader from "@hooks/useLoader";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, calcLength } from "framer-motion";
 import Footer from "./Footer";
+import useLinks from "@hooks/useLinks";
 
 const ANIMATION_DELAY = 3;
+const fetched = false;
 
 const Layout = ({ children }) => {
   const [showContent, setShowContent] = useState(false);

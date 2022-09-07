@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import useBackdrop from "@hooks/useBackdrop";
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
+import useLinks from "@hooks/useLinks";
 
 const container = {
   hidden: { opacity: 1 },
@@ -42,23 +43,9 @@ const GithubSVG = () => {
   );
 };
 
-const solutions = [
-  {
-    name: "Resume",
-    description: "Keep track of your growth",
-    href: "https://firebasestorage.googleapis.com/v0/b/portfolio-website-b7095.appspot.com/o/Resume%20-%20Aayush%20Bajaj.pdf?alt=media&token=32980bf4-a7ff-4618-8756-057d65a5484c",
-    icon: "",
-  },
-  {
-    name: "Github",
-    description: "Keep track of your growth",
-    href: "https://firebasestorage.googleapis.com/v0/b/portfolio-website-b7095.appspot.com/o/Resume%20-%20Aayush%20Bajaj.pdf?alt=media&token=32980bf4-a7ff-4618-8756-057d65a5484c",
-    icon: "",
-  },
-];
-
 const Navbar = () => {
   const backdrop = useBackdrop();
+  const { state } = useLinks();
 
   return (
     <div className="flex justify-center w-full">
@@ -90,7 +77,7 @@ const Navbar = () => {
             variants={item}
             className="flex items-center"
             onClick={() => {
-              window.open("https://github.com/AayushBajaj2000", "_blank");
+              window.open(state.github, "_blank");
             }}
           >
             <GithubSVG />
@@ -101,10 +88,7 @@ const Navbar = () => {
           <motion.div variants={item}>
             <Button
               onClick={() => {
-                window.open(
-                  "https://firebasestorage.googleapis.com/v0/b/portfolio-website-b7095.appspot.com/o/Resume%20-%20Aayush%20Bajaj.pdf?alt=media&token=32980bf4-a7ff-4618-8756-057d65a5484c",
-                  "_blank"
-                );
+                window.open(state.resume, "_blank");
               }}
               className="h-full p-2 text-xl rounded-md outline-2 hover:bg-slate-300 hover:bg-opacity-30 outline-white outline"
             >
@@ -176,10 +160,7 @@ const Navbar = () => {
                         </Link>
                         <div
                           onClick={() => {
-                            window.open(
-                              "https://firebasestorage.googleapis.com/v0/b/portfolio-website-b7095.appspot.com/o/Resume%20-%20Aayush%20Bajaj.pdf?alt=media&token=cc8cd9e0-685c-4a52-81e0-944afd30971d",
-                              "_blank"
-                            );
+                            window.open(state.resume, "_blank");
                             close();
                           }}
                           className="hover:cursor-pointer flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-[rgba(255,255,255,0.08)] focus:outline-none focus-visible:ring focus-visible:ring-orange-500  focus-visible:ring-opacity-50"
@@ -200,10 +181,7 @@ const Navbar = () => {
                               className="w-6 h-6 mr-5 hover:cursor-pointer"
                               fill="white"
                               onClick={() => {
-                                window.open(
-                                  "https://www.linkedin.com/in/aayush-bajaj-b80a8919a/",
-                                  "_blank"
-                                );
+                                window.open(state.linkedin, "_blank");
                               }}
                             >
                               <path d="M20.47,2H3.53A1.45,1.45,0,0,0,2.06,3.43V20.57A1.45,1.45,0,0,0,3.53,22H20.47a1.45,1.45,0,0,0,1.47-1.43V3.43A1.45,1.45,0,0,0,20.47,2ZM8.09,18.74h-3v-9h3ZM6.59,8.48h0a1.56,1.56,0,1,1,0-3.12,1.57,1.57,0,1,1,0,3.12ZM18.91,18.74h-3V13.91c0-1.21-.43-2-1.52-2A1.65,1.65,0,0,0,12.85,13a2,2,0,0,0-.1.73v5h-3s0-8.18,0-9h3V11A3,3,0,0,1,15.46,9.5c2,0,3.45,1.29,3.45,4.06Z" />
@@ -214,10 +192,7 @@ const Navbar = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               onClick={() => {
-                                window.open(
-                                  "https://github.com/AayushBajaj2000",
-                                  "_blank"
-                                );
+                                window.open(state.github, "_blank");
                               }}
                             >
                               <path
@@ -231,10 +206,7 @@ const Navbar = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               onClick={() => {
-                                window.open(
-                                  "mailto:byaayushb@gmail.com",
-                                  "_blank"
-                                );
+                                window.open(`mailto:${state.email}`, "_blank");
                               }}
                             >
                               <path
