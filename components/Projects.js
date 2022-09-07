@@ -39,7 +39,7 @@ const Projects = ({ projects }) => {
           viewport={{ amount: 0.5, once: true }}
         >
           <h1 className="mb-10 text-3xl font-medium md:text-5xl font-heading">
-            Works
+            Projects
           </h1>
         </motion.div>
         <motion.div
