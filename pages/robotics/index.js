@@ -54,9 +54,6 @@ const Projects = ({ projects }) => {
               key={index}
               whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
               className="w-full md:w-1/2 max-w-[330px] p-3 hover:cursor-pointer"
-              onClick={() => {
-                router.push(`/robotics/${project.id}`);
-              }}
             >
               <Project data={project} key={index} />
             </motion.div>

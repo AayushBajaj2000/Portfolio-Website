@@ -54,9 +54,6 @@ const Projects = ({ projects }) => {
               key={index}
               variants={item}
               whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
-              onClick={() => {
-                router.push(`/project/${project.id}`);
-              }}
               viewport={{ once: true }}
               className="w-full md:w-1/2 max-w-[330px] p-3 hover:cursor-pointer"
             >
