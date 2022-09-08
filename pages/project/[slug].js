@@ -4,23 +4,25 @@ import Image from "next/image";
 
 const Badge = ({ children }) => {
   return (
-    <span className="text-[#9AE6B4] rounded-sm text-sm mr-4 font-bold bg-[rgba(154,230,180,0.16)] p-1">
+    <span className="flex w-[80px] h-[25px] justify-center items-center text-[#9AE6B4] rounded-sm text-sm mr-4 font-bold bg-[rgba(154,230,180,0.16)] p-1">
       {children}
     </span>
   );
 };
 
 const Description = ({ project }) => {
-  console.log(project);
   return (
     <div className="pt-[120px] p-3 flex justify-center">
       <div className="flex-1 max-w-2xl">
-        <p className="my-2 text-3xl font-bold font-heading">
+        <div>
+          <span></span>
+        </div>
+        <p className="px-1 my-2 text-3xl font-bold font-heading">
           {project.heading}
         </p>
-        <PortableText className="p-3" blocks={project.body} />
+        <PortableText className="px-1" blocks={project.body} />
         {project.link && (
-          <div className="p-1">
+          <div className="flex items-center p-1 mt-[10px]">
             <Badge>Website</Badge>
             <span className="text-sm">
               <a
@@ -34,11 +36,11 @@ const Description = ({ project }) => {
             </span>
           </div>
         )}
-        <div className="p-1">
+        <div className="flex items-center p-1">
           <Badge>Platform</Badge>
           <span className="text-sm">{project.platform}</span>
         </div>
-        <div className="p-1 mb-[50px]">
+        <div className="flex items-center p-1 mb-[50px]">
           <Badge>Stack</Badge>
           <span className="text-sm">{project.stack}</span>
         </div>
