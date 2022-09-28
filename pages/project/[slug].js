@@ -88,9 +88,7 @@ export async function getServerSideProps(context) {
     heading, link, platform, stack, body, "image": image.asset->url,
     "images": gallery[].asset->url
   }`;
-  const url = `https://myde3fi0.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
-    query
-  )}`;
+  const url = `${process.env.SANITY_URL + encodeURIComponent(query)}`;
   const result = await fetch(url)
     .then((res) => res.json())
     .catch((err) => console.log(err));

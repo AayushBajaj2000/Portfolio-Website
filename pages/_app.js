@@ -16,16 +16,18 @@ function MyApp({ Component, pageProps }) {
         </Layout>
       </LinkProvider>
       <Script
-        id="gat"
         strategy="lazyOnload"
-        src={"https://www.googletagmanager.com/gtag/js?id=G-0SMVZR7HZT"}
-      ></Script>
-      <Script id="ga" strategy="lazyOnload">
-        {`window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'G-0SMVZR7HZT');`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+      <Script strategy="lazyOnload">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+        page_path: window.location.pathname,
+        });
+    `}
       </Script>
     </>
   );

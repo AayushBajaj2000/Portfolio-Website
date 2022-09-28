@@ -40,8 +40,8 @@ const Hero = () => {
         </div>
         <div className="max-w-xl my-3 text-justify">
           <p className="text-[14px] md:text-[16px]">
-            I’m a mechatronics engineer specializing in building full stack
-            applications. Currently, I’m focused on building a fundraising
+            I&#39;m a mechatronics engineer specializing in building full stack
+            applications. Currently, I&#39;m focused on building a fundraising
             platform for
             <a
               href="https://efundrs.com/"
