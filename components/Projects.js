@@ -61,15 +61,15 @@ const Projects = ({ projects }) => {
               <Project data={project} key={index} />
             </motion.div>
           ))}
-          <p className="text-xl mt-[80px] text-center ">
-            Interested in my Mechatronics / Robotics Projects?{" "}
-            <Link href="/robotics">
-              <motion.a className="hover:underline hover:cursor-pointer">
-                Click Here
-              </motion.a>
-            </Link>
-          </p>
         </motion.div>
+        <p className="text-xl mt-[80px] text-center ">
+          Interested in my Mechatronics / Robotics Projects?{" "}
+          <Link href="/robotics">
+            <motion.a className="hover:underline hover:cursor-pointer">
+              Click Here
+            </motion.a>
+          </Link>
+        </p>
       </div>
     </div>
   );

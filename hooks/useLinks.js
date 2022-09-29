@@ -11,13 +11,12 @@ const useLinks = () => {
     const fetcher = async () => {
       if (!fetched) {
         const query = `*[_type == "sociallinks"] { email, github, linkedin, resume }`;
-        const url = `https://myde3fi0.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
-          query
-        )}`;
-        const result = await fetch(url)
-          .then((res) => res.json())
-          .catch((err) => console.log(err));
-        const links = result.result[0];
+        const url = `${
+          process.env.NEXT_PUBLIC_SANITY_URL + encodeURIComponent(query)
+        }`;
+        const result = await fetch(url);
+        const data = await result.json();
+        const links = data.result[0];
         setState(links);
 
         fetched = true;
