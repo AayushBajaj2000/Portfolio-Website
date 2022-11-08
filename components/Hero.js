@@ -41,13 +41,12 @@ const Hero = () => {
         <div className="max-w-xl my-3 text-justify">
           <p className="text-[14px] md:text-[16px]">
             I&#39;m a mechatronics engineer specializing in building full stack
-            applications. Currently, I&#39;m focused on building a fundraising
-            platform for
+            applications. Currently, working as a Quality Assurance Analyst at
             <a
-              href="https://efundrs.com/"
+              href="https://vention.io/"
               className="ml-1 font-bold hover:underline"
             >
-              Efundrs.
+              Vention
             </a>
           </p>
         </div>

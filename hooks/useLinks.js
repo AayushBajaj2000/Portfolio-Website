@@ -14,6 +14,7 @@ const useLinks = () => {
         const url = `${
           process.env.NEXT_PUBLIC_SANITY_URL + encodeURIComponent(query)
         }`;
+        console.log(url);
         const result = await fetch(url);
         const data = await result.json();
         const links = data.result[0];
